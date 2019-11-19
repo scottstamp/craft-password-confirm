@@ -1,0 +1,40 @@
+{
+    "name": "christopherdosin/password-confirm",
+    "description": "PasswordConfirmPlugin",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "passwordconfirm"
+    ],
+    "support": {
+        "docs": "https://github.com/christopherdosin/password-confirm/blob/master/README.md",
+        "issues": "https://github.com/christopherdosin/password-confirm/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christopher Dosin",
+            "homepage": "https://christopherdosin.me"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "christopherdosin\\passwordconfirm\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "PasswordConfirm",
+        "handle": "password-confirm",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/christopherdosin/password-confirm/master/CHANGELOG.md",
+        "class": "christopherdosin\\passwordconfirm\\PasswordConfirm"
+    }
+}
