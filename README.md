@@ -1,8 +1,7 @@
-# PasswordConfirm plugin for Craft CMS 3.x
+#  PasswordConfirm plugin for Craft CMS 3.x
+A little helper for you to confirm passwords match on front end forms
 
-PasswordConfirmPlugin
-
-![Screenshot](resources/img/plugin-logo.png)
+This plugin *does not* use it's own controller to save the user, so it doesn't override or bypass any of Crafts own methods, so it's all good :)
 
 ## Requirements
 
@@ -22,22 +21,15 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for PasswordConfirm.
 
-## PasswordConfirm Overview
-
--Insert text here-
-
-## Configuring PasswordConfirm
-
--Insert text here-
-
 ## Using PasswordConfirm
 
--Insert text here-
+You just need to add a `passwordConfirm` field to your *front end* user registration form, like so:
 
-## PasswordConfirm Roadmap
+```html
+<input type="password" name="passwordConfirm">
+{% if account is defined %}
+  {{ account.getErrors('passwordConfirm') }}
+{% endif %}
+```
 
-Some things to do, and ideas for potential features:
-
-* Release it
-
-Brought to you by [Christopher Dosin](https://christopherdosin.me)
+Then when the user submits, passwordconfirm listens for the event and checks whether the two strings match and if not will add errors to the user model, stop the save process and return you to your form.
